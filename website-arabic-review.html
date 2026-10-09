@@ -183,7 +183,7 @@ const text=node.textContent;
 if(segmenter){
 const fragment=document.createDocumentFragment();
 // Keep complete names, geographic compounds, and katakana words together.
-const protectedPattern=/(新カンプ・ノウ|日建設計|東京海上日動|北アフリカ|東南アジア|東アジア|アラビア語|フランス語|日本語|地中海|刊行物|贈呈書籍|建築書籍|E-JUST|[ァ-ヺー]+(?:・[ァ-ヺー]+)*)/u;
+const protectedPattern=/(王族関係者|関係者|新カンプ・ノウ|日建設計|東京海上日動|北アフリカ|東南アジア|東アジア|アラビア語|フランス語|日本語|地中海|刊行物|贈呈書籍|建築書籍|E-JUST|[ァ-ヺー]+(?:・[ァ-ヺー]+)*)/u;
 for(const chunk of text.split(protectedPattern)){
 const protectedTerm=new RegExp('^(?:'+protectedPattern.source+')$','u').test(chunk);
 const parts=protectedTerm?(chunk.length>20&&chunk.includes('・')?chunk.match(/[^・]+(?:・|$)/gu).map(segment=>({segment,isWordLike:true})):[{segment:chunk,isWordLike:true}]):segmenter.segment(chunk);
