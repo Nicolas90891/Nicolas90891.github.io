@@ -173,7 +173,7 @@ html[lang=ar] .hero .slide-control{right:auto!important;left:16px!important;dire
 <script>(()=>{const certificate=document.querySelector('[data-content-key="text_208"]');if(certificate){const tidy=()=>{const t=certificate.textContent.replace(/[.。]+\s*$/,'');if(t!==certificate.textContent)certificate.textContent=t;};tidy();new MutationObserver(tidy).observe(certificate,{childList:true,characterData:true,subtree:true});}const original=document.querySelector('.profile-sidebar nav');if(!original)return;const nav=original.cloneNode(true);nav.className='top-navigation';nav.setAttribute('aria-label',({en:'Site sections',ja:'サイト内ナビゲーション',fr:'Sections du site',ar:'أقسام الموقع'})[document.documentElement.lang]);document.body.append(nav);const links=[...nav.querySelectorAll('a[href^="#"]')];const entries=links.map(link=>({link,section:document.querySelector(link.getAttribute('href'))})).filter(x=>x.section);const top=document.querySelector('.back-to-top');const reduced=matchMedia('(prefers-reduced-motion: reduce)');top.addEventListener('click',()=>window.scrollTo({top:0,behavior:reduced.matches?'instant':'smooth'}));let queued=false;function update(){queued=false;let current=entries[0];for(const entry of entries)if(entry.section.getBoundingClientRect().top<130)current=entry;for(const entry of entries){const active=entry===current;entry.link.classList.toggle('current',active);if(active)entry.link.setAttribute('aria-current','location');else entry.link.removeAttribute('aria-current');}top.classList.toggle('visible',scrollY>350)}addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(update)}},{passive:true});update()})();</script>
 <script id="reading-wrap">(()=>{
 const lang=document.documentElement.lang;
-const words={en:['I','we','and','as','a','an','the','of','to','in','on','at','by','or','for','with'],fr:['je','et','ou','à','de','du','des','en','au','aux','le','la','les','un','une','que','qui','pour','avec'],ar:['و','في','من','إلى','عن','على','أو','مع']};
+const words={en:['I','we','and','as','a','an','the','of','to','in','on','at','by','or','for','with','it','he','she','they','my','our','your','their','its','that','which','this','these','those','is','are','was','were','but','from','into','through','over','under','during','while','than','then'],fr:['je','et','ou','à','de','du','des','en','au','aux','le','la','les','un','une','que','qui','pour','avec','il','elle','ils','elles','nous','vous','ce','cet','cette','ces','sa','son','ses','leur','leurs','mon','ma','mes','se','ne','me','te','y','mais','dont','dans','sur','par','sans','sous','si'],ar:['و','في','من','إلى','عن','على','أو','مع','أي','أن','إن','كما','بما','هو','هي','هذا','هذه']};
 const targets=new Set((words[lang]||[]).map(w=>w.toLocaleLowerCase(lang)));
 const segmenter=lang==='ja'&&typeof Intl.Segmenter==='function'?new Intl.Segmenter('ja',{granularity:'word'}):null;
 document.querySelectorAll('main p,main li,main h1,main h2,main h3,main h4,main h5,.sidebar-role').forEach(root=>{
@@ -183,19 +183,19 @@ const text=node.textContent;
 if(segmenter){
 const fragment=document.createDocumentFragment();
 // Keep complete names, geographic compounds, and katakana words together.
-const protectedPattern=/(北アフリカ|東南アジア|東アジア|アラビア語|フランス語|日本語|地中海|刊行物|贈呈書籍|建築書籍|E-JUST|[ァ-ヺー]+(?:・[ァ-ヺー]+)*)/u;
+const protectedPattern=/(新カンプ・ノウ|日建設計|東京海上日動|北アフリカ|東南アジア|東アジア|アラビア語|フランス語|日本語|地中海|刊行物|贈呈書籍|建築書籍|E-JUST|[ァ-ヺー]+(?:・[ァ-ヺー]+)*)/u;
 for(const chunk of text.split(protectedPattern)){
 const protectedTerm=new RegExp('^(?:'+protectedPattern.source+')$','u').test(chunk);
 const parts=protectedTerm?(chunk.length>20&&chunk.includes('・')?chunk.match(/[^・]+(?:・|$)/gu).map(segment=>({segment,isWordLike:true})):[{segment:chunk,isWordLike:true}]):segmenter.segment(chunk);
 for(const part of parts){if(part.isWordLike&&part.segment.length<=20){const span=document.createElement('span');span.className='reading-word';span.textContent=part.segment;fragment.append(span);}else fragment.append(document.createTextNode(part.segment));}
 }node.replaceWith(fragment);
 }
-else node.textContent=text.replace(/(\S+)([ \t]+)(?=\S)/gu,(all,word,space)=>targets.has(word.toLocaleLowerCase(lang))?word+'\u00a0':all);
+else node.textContent=text.replace(/(?<=\p{L})-(?=\p{L})/gu,'\u2011').replace(/(\S+)([ \t]+)(?=\S)/gu,(all,word,space)=>targets.has(word.replace(/^.*[—–]/u,'').toLocaleLowerCase(lang))?word+'\u00a0':all);
 }
 });
 })();</script>
 
-<script id="arabic-slideshow-focal-preview">(()=>{if(document.documentElement.lang!=='ar')return;const slide=document.querySelector('.slide-mosque');if(!slide)return;const update=()=>{if(innerWidth<1000){slide.style.backgroundPosition='';return}const w=slide.clientWidth,h=slide.clientHeight,imageWidth=Math.max(w,h*(1124/707));slide.style.backgroundPosition=(w*.72-imageWidth*.243)+'px center';};new ResizeObserver(update).observe(slide);update()})();</script>
+
 
 <script id="date-ranges">(()=>{for(const key of ['158','189','200','204','207']){const el=document.querySelector('[data-content-key="text_'+key+'"]');if(!el)continue;const text=el.textContent,split=text.indexOf('｜'),range=document.createElement('span');range.className='date-range';range.textContent=(split<0?text:text.slice(split+1)).trim();range.dir=document.documentElement.lang==='ar'?'rtl':'ltr';if(split<0)el.replaceChildren(range);else{const place=document.createElement('span');place.className='date-place';place.textContent=text.slice(0,split).trim();el.replaceChildren(place,range)}}})();</script>
 </body></html>
