@@ -265,3 +265,5 @@ else if(desktop) node.textContent=node.textContent.replace(/(?<=\p{L})-(?=\p{L})
 
 
 
+
+<script id="japanese-desktop-regions-wrap">(()=>{if(!matchMedia("(min-width:801px)").matches)return;const root=document.querySelector("[data-content-key=text_017]");if(!root)return;const children=[...root.childNodes],i=children.findIndex(el=>el.textContent==="中東");if(i>=0&&children[i+1]?.textContent==="、"&&children[i+2]?.textContent==="東アジア"){const group=document.createElement("span");group.className="reading-word";children[i].before(group);group.append(children[i],children[i+1],children[i+2]);}})();</script>
