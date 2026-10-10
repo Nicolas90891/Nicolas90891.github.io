@@ -135,7 +135,9 @@ html[lang=ar] main>.hero{width:100%;margin-inline:auto!important}
 /* Arabic preview: reflect the photographs only, leaving text and white fade unchanged. */
 html[lang=ar] .about-slide{transform:scaleX(-1)}
 
-@media(min-width:801px){html[lang=ar] .hero{padding-right:0!important}}
+@media(min-width:801px){html[lang=ar] .hero{padding-right:38px!important}
+@media(max-width:1150px) and (min-width:801px){html[lang=ar] .hero{padding-right:28px!important}}
+@media(max-width:800px){html[lang=ar] .hero{padding-right:22px!important}}}
 
 /* Arabic desktop sidebar follows the right-to-left reading flow. */
 @media(min-width:801px){html[lang=ar] .profile-sidebar{left:auto;right:0;border-right:0;border-left:1px solid #d8dde2}html[lang=ar] main{margin-left:0;margin-right:260px}html[lang=ar] .top-navigation{left:0;right:260px}}
