@@ -204,7 +204,7 @@ for(const chunk of text.split(protectedPattern)){
 const protectedTerm=new RegExp('^(?:'+protectedPattern.source+')$','u').test(chunk);
 const splitTerms={'プロジェクトマネジメント':['プロジェクト','マネジメント'],'ウォーターフロント':['ウォーター','フロント'],'ランドマークタワー':['ランドマーク','タワー']};
 const parts=splitTerms[chunk]?splitTerms[chunk].map(segment=>({segment,isWordLike:true})):protectedTerm?(chunk.length>20&&chunk.includes('・')?chunk.match(/[^・]+(?:・|$)/gu).map(segment=>({segment,isWordLike:true})):[{segment:chunk,isWordLike:true}]):segmenter.segment(chunk);
-for(const part of parts){if(part.isWordLike&&part.segment.length<=20){const span=document.createElement('span');span.className='reading-word';span.textContent=part.segment;fragment.append(span);}else fragment.append(document.createTextNode(part.segment));}
+for(const part of [...parts].flatMap(part=>splitTerms[part.segment]?splitTerms[part.segment].map(segment=>({segment,isWordLike:true})):[part])){if(part.isWordLike&&part.segment.length<=20){const span=document.createElement('span');span.className='reading-word';span.textContent=part.segment;fragment.append(span);}else fragment.append(document.createTextNode(part.segment));}
 }
 if(desktop&&root.closest('.hero')){const children=[...fragment.childNodes];for(let i=0;i<children.length-1;i++){if(children[i].textContent==='と'||children[i].textContent==='日本語'&&children[i+1].textContent==='・'){const group=document.createElement('span');group.className='reading-word';children[i].before(group);group.append(children[i],children[i+1]);if(group.textContent==='日本語・'&&children[i+2])group.append(children[i+2]);}}}
 node.replaceWith(fragment);
