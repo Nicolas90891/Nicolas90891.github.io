@@ -365,7 +365,21 @@ for(const node of nodes){if(node.parentElement.closest('script,style,.reading-ph
 
 
 <script id="date-ranges">(()=>{for(const key of ['158','189','200','204','207']){const el=document.querySelector('[data-content-key="text_'+key+'"]');if(!el)continue;const text=el.textContent,split=text.indexOf('｜'),range=document.createElement('span');range.className='date-range';range.textContent=(split<0?text:text.slice(split+1)).trim();range.dir=document.documentElement.lang==='ar'?'rtl':'ltr';if(split<0)el.replaceChildren(range);else{const place=document.createElement('span');place.className='date-place';place.textContent=text.slice(0,split).trim();el.replaceChildren(place,range)}}})();</script>
-<script id="link-punctuation-wrap">document.querySelectorAll('main a').forEach(a=>{const walker=document.createTreeWalker(a,NodeFilter.SHOW_TEXT);while(walker.nextNode())walker.currentNode.textContent=walker.currentNode.textContent.replace(/\s+↗/g,'\u00a0↗');});</script><script id="mobile-navigation-refinement-20261011">(()=>{const nav=document.querySelector('.top-navigation'),top=document.querySelector('.back-to-top');if(!nav||!top)return;const mobile=matchMedia('(max-width:800px)');function arrange(){if(mobile.matches){nav.append(top);document.documentElement.style.setProperty('--mobile-navigation-height',nav.getBoundingClientRect().height+'px');}else if(top.parentElement===nav){document.body.insertBefore(top,nav);}}mobile.addEventListener('change',arrange);new ResizeObserver(arrange).observe(nav);arrange();})();</script></body></html>
+<script id="link-punctuation-wrap">document.querySelectorAll('main a').forEach(a=>{const walker=document.createTreeWalker(a,NodeFilter.SHOW_TEXT);while(walker.nextNode())walker.currentNode.textContent=walker.currentNode.textContent.replace(/\s+↗/g,'\u00a0↗');});</script><script id="mobile-navigation-refinement-20261011">(()=>{const nav=document.querySelector('.top-navigation'),top=document.querySelector('.back-to-top');if(!nav||!top)return;const mobile=matchMedia('(max-width:800px)');function arrange(){if(mobile.matches){nav.append(top);document.documentElement.style.setProperty('--mobile-navigation-height',nav.getBoundingClientRect().height+'px');}else if(top.parentElement===nav){document.body.insertBefore(top,nav);}}mobile.addEventListener('change',arrange);new ResizeObserver(arrange).observe(nav);arrange();})();</script><style id="desktop-reading-balance-20261025">
+@media(min-width:1000px){
+.hero{min-height:780px!important}
+.hero .about-slides .about-slide[style*="tadawul-crown"]{background-position:60% 9%!important}
+html:not([lang=ja]) .hero .about-columns{max-width:1000px!important}
+html:not([lang=ja]) .hero .about-paragraph{max-width:1000px!important;line-height:1.7!important;margin-bottom:20px!important}
+html[lang=fr] .hero .about-columns,html[lang=fr] .hero .about-paragraph{max-width:1040px!important}
+html[lang=en] #expertise .expertise-introduction p{text-wrap:wrap}
+html[lang=ja] .hero .desktop-word,html[lang=ja] #expertise .desktop-word{white-space:nowrap}
+html[lang=fr] .hero{padding-bottom:48px!important}
+html[lang=fr] .hero .about-paragraph{margin-bottom:16px!important}
+html[lang=en] #expertise .expertise-introduction>div:first-child{letter-spacing:-.12px}
+html[lang=en] #expertise .expertise-introduction{grid-template-columns:1.2fr 1fr}
+}
+</style></body></html>
 
 <style id="tadawul-framing-adjustment">#project-tadawul .project-image .photo-spread img{object-position:center bottom!important}</style>
 
