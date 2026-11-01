@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nicolasfurukawa.com/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://nicolasfurukawa.com/" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://nicolasfurukawa.com/ja.html" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://nicolasfurukawa.com/fr.html" />
@@ -94,10 +94,11 @@
     <image:image>
       <image:loc>https://nicolasfurukawa.com/tadawul-single.jpg</image:loc>
     </image:image>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nicolasfurukawa.com/" />
   </url>
   <url>
     <loc>https://nicolasfurukawa.com/ja.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://nicolasfurukawa.com/" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://nicolasfurukawa.com/ja.html" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://nicolasfurukawa.com/fr.html" />
@@ -189,10 +190,11 @@
     <image:image>
       <image:loc>https://nicolasfurukawa.com/tadawul-single.jpg</image:loc>
     </image:image>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nicolasfurukawa.com/" />
   </url>
   <url>
     <loc>https://nicolasfurukawa.com/fr.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://nicolasfurukawa.com/" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://nicolasfurukawa.com/ja.html" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://nicolasfurukawa.com/fr.html" />
@@ -284,10 +286,11 @@
     <image:image>
       <image:loc>https://nicolasfurukawa.com/tadawul-single.jpg</image:loc>
     </image:image>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nicolasfurukawa.com/" />
   </url>
   <url>
     <loc>https://nicolasfurukawa.com/ar.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://nicolasfurukawa.com/" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://nicolasfurukawa.com/ja.html" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://nicolasfurukawa.com/fr.html" />
@@ -379,5 +382,6 @@
     <image:image>
       <image:loc>https://nicolasfurukawa.com/tadawul-single.jpg</image:loc>
     </image:image>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nicolasfurukawa.com/" />
   </url>
 </urlset>
