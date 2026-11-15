@@ -3,3 +3,4 @@ Allow: /
 Disallow: /admin.html
 Disallow: /admin/
 Sitemap: https://nicolasfurukawa.com/sitemap.xml
+Sitemap: https://nicolasfurukawa.com/publications/sitemap.xml
