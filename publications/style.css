@@ -38,3 +38,6 @@ html[lang=ar] .figures th,html[lang=ar] .figures td{font-size:18px}html[lang=ar]
 @media(max-width:700px){html[lang=ar] .figures th,html[lang=ar] .figures td{font-size:17px}html[lang=ar] .category-detail{font-size:15px}html[lang=ar] .figure-period{font-size:16px}html[lang=ar] .migration-note p{font-size:17px}}
 
 .number-unit{white-space:nowrap;unicode-bidi:isolate;font-variant-numeric:tabular-nums}
+
+/* Flags use their own fills and strokes, independent of line icons. */
+svg.language-flag{stroke:none;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter}
