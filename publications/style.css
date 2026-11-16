@@ -41,3 +41,12 @@ html[lang=ar] .figures th,html[lang=ar] .figures td{font-size:18px}html[lang=ar]
 
 /* Flags use their own fills and strokes, independent of line icons. */
 svg.language-flag{stroke:none;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter}
+
+/* Direct language selection: reuse the approved flags with one-click links. */
+.direct-language-flags{display:flex;align-items:center;flex-wrap:nowrap;gap:8px;direction:ltr;isolation:isolate;}
+.direct-language-flags a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:40px;padding:7px;border:1px solid transparent;border-radius:4px;line-height:1;text-decoration:none;background:transparent;transition:background .15s,border-color .15s;}
+.direct-language-flags a:hover{background:#e6edf2;border-color:#bac8d2;text-decoration:none;}
+.direct-language-flags a[aria-current="page"]{background:#e6edf2;border-color:#849eaf;}
+.direct-language-flags svg.language-flag{display:block;flex:none;width:28px;height:19px;filter:none;opacity:1;stroke:none;stroke-width:0;}
+.direct-language-flags a:focus-visible{outline:2px solid #183f56;outline-offset:3px;}
+@media(max-width:700px){.direct-language-flags{gap:8px;}.direct-language-flags a{height:44px;}}
