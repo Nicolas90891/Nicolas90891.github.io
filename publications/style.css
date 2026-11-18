@@ -115,3 +115,10 @@ html[lang=ja] .prose .ja-unit{white-space:nowrap;}
 html[lang=ja] .prose p{text-justify:inter-character;}
 
 @media(max-width:700px){.article-page .prose p{text-align:start;}}
+
+/* Shared return-to-top control, matching the profile site's quiet pill button. */
+.publication-top{position:fixed;left:18px;right:auto;bottom:max(22px,env(safe-area-inset-bottom));z-index:45;display:inline-flex;align-items:center;justify-content:center;gap:5px;min-width:44px;min-height:44px;padding:10px 16px;border:1px solid #b4c5d1;border-radius:24px;background:#fff;color:var(--ink);font:inherit;font-size:14px;line-height:1.5;box-shadow:0 2px 8px #303a430b;cursor:pointer;}
+.publication-top[hidden]{display:none;}
+.publication-top:hover{background:#e6eef4;border-color:#7f9aad;}
+.publication-top:focus-visible{outline:2px solid var(--ink);outline-offset:3px;}
+@media(max-width:700px){.publication-top{left:12px;bottom:max(16px,env(safe-area-inset-bottom));width:44px;height:44px;padding:0;font-size:22px;}.publication-top-label{display:none;}body:has(.publication-top) .footer{padding-bottom:80px;}}
