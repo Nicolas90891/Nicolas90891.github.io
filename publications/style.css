@@ -102,3 +102,16 @@ html[lang=ar] .sections a{font-size:18px;}@media(max-width:700px){html[lang=ar] 
 .hope-mobile-figure{display:block;margin:0 0 28px}
 .hope-mobile-figure img{width:100%;height:auto;border-radius:3px}
 }
+
+/* Editorial reading measure and Japanese word-aware wrapping. Font sizes unchanged. */
+.article-page .masthead-inner,.article-page .article-main{max-width:880px;}
+.article-page .footer{max-width:808px;}
+@media(min-width:881px){.article-page .footer{margin-inline:auto;}}
+html[lang=ja] .prose p,html[lang=ja] .prose li{line-break:strict;word-break:normal;overflow-wrap:normal;text-wrap:wrap;}
+html[lang=ja] .prose .ja-unit{white-space:nowrap;}
+
+/* Natural paragraph setting; final lines retain their reading direction. */
+.article-page .prose p{hyphens:none;text-align:justify;text-align-last:start;}
+html[lang=ja] .prose p{text-justify:inter-character;}
+
+@media(max-width:700px){.article-page .prose p{text-align:start;}}
