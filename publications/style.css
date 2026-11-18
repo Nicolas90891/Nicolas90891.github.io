@@ -148,3 +148,10 @@ html[lang=ja] .heading-phrase{display:inline;}
 
 /* Let existing title fragments share the available measure naturally. */
 .article-header h1 .title-part,.card-copy h3 .title-part,html[lang=ar] .article-header h1 .title-part,html[lang=ar] .card-copy h3 .title-part{display:inline;}
+
+/* Editorial sentence breaks for the long European-support question. */
+@media(min-width:881px){
+.prose h2.sentence-question{text-wrap:wrap;}
+.sentence-question .question-line{display:block;}
+html[lang=fr] .prose h2.sentence-question{font-size:25px;}
+}
