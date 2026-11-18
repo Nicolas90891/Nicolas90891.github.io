@@ -126,3 +126,25 @@ html[lang=ja] .prose p{text-justify:inter-character;}
 /* Mirror the floating shortcut for right-to-left pages. */
 html[dir=rtl] .publication-top{left:auto;right:18px;}
 @media(max-width:700px){html[dir=rtl] .publication-top{left:auto;right:12px;}}
+
+/* Clear editorial hierarchy in every publication language. */
+.article-header h1,.intro h1{font-weight:700;}
+.prose h2,.prose h3,.figures h2,.migration-note h3,.collection-head h2,.related h2,.sources h2{font-weight:700;color:var(--ink);text-align:start;hyphens:none;}
+.prose h2{font-size:26px;line-height:1.5;margin-block:34px 17px;}
+.prose h3{font-size:23px;line-height:1.5;margin-block:28px 14px;}
+.card-copy h3{font-weight:600;}
+html[lang=ar] .prose h2{font-size:28px;line-height:1.6;}
+html[lang=ar] .prose h3{font-size:25px;line-height:1.6;}
+html[lang=ja] h1,html[lang=ja] h2,html[lang=ja] h3{line-break:strict;word-break:normal;overflow-wrap:normal;text-wrap:wrap;letter-spacing:0;}
+html[lang=ja] :is(h1,h2,h3) .ja-unit{white-space:nowrap;}
+html[lang=ja] .heading-phrase{display:inline-block;max-width:100%;}
+@media(max-width:700px){
+.prose h2{font-size:23px;margin-block:29px 15px;}
+.prose h3{font-size:21px;margin-block:25px 13px;}
+html[lang=ar] .prose h2{font-size:25px;}
+html[lang=ar] .prose h3{font-size:23px;}
+html[lang=ja] .heading-phrase{display:inline;}
+}
+
+/* Let existing title fragments share the available measure naturally. */
+.article-header h1 .title-part,.card-copy h3 .title-part,html[lang=ar] .article-header h1 .title-part,html[lang=ar] .card-copy h3 .title-part{display:inline;}
