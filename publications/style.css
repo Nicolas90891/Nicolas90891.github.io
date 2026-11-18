@@ -85,3 +85,20 @@ html{scroll-behavior:smooth;}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}.portfolio-link,.sections a,.card{transition:none;}}
 
 html[lang=ar] .sections a{font-size:18px;}@media(max-width:700px){html[lang=ar] .sections a{font-size:17px;}}
+
+/* Hope feature: same editorial type scale; complementary image placement. */
+.reflections .hope-feature{grid-column:1/-1;border-top:2px solid #9bb2c3}
+.reflections .hope-feature .card-link{display:grid;grid-template-columns:1fr 1fr}
+.hope-feature .hope-card-image{display:block;min-width:0;overflow:hidden}
+.hope-feature .hope-card-image img{width:100%;height:100%;min-height:270px;object-fit:cover}
+.hope-feature .card-copy{justify-content:center;padding:32px}
+.hope-feature .read{margin-top:0}
+.hope-mobile-figure{display:none}
+.hope-article .prose .hope-closing{font-weight:600;color:var(--ink)}
+@media(max-width:700px){
+.reflections .hope-feature .card-link{display:block}
+.hope-feature .hope-card-image{display:none}
+.hope-feature .card-copy{padding:23px}
+.hope-mobile-figure{display:block;margin:0 0 28px}
+.hope-mobile-figure img{width:100%;height:auto;border-radius:3px}
+}
