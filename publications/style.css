@@ -155,3 +155,8 @@ html[lang=ja] .heading-phrase{display:inline;}
 .sentence-question .question-line{display:block;}
 html[lang=fr] .prose h2.sentence-question{font-size:25px;}
 }
+
+/* Plain author credit, shared by article and publication index footers. */
+.footer-identity{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;min-width:0;}
+.footer-author{font-weight:500;color:var(--ink);}
+.footer-rights{color:var(--muted);}

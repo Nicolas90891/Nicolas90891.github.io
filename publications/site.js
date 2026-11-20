@@ -4,3 +4,17 @@
 
 // A shared, keyboard-accessible shortcut for publication listings and articles.
 (()=>{if(!document.querySelector('.index-main,.article-main'))return;const labels={en:['Top','Back to top'],fr:['Haut','Retour en haut de page'],ja:['トップ','ページの先頭へ戻る'],ar:['الأعلى','العودة إلى أعلى الصفحة']};const [short,label]=labels[document.documentElement.lang]||labels.en;const button=document.createElement('button');button.type='button';button.className='publication-top';button.hidden=true;button.setAttribute('aria-label',label);button.title=label;const arrow=document.createElement('span');arrow.setAttribute('aria-hidden','true');arrow.textContent='↑';const text=document.createElement('span');text.className='publication-top-label';text.textContent=short;button.append(arrow,text);document.body.append(button);let queued=false;const update=()=>{queued=false;button.hidden=window.scrollY<=350;};window.addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(update);}},{passive:true});window.addEventListener('pageshow',update);button.addEventListener('click',()=>{window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});update();})();
+
+// Keep the plain author credit consistent across all publication pages.
+(()=>{
+  const names={en:'Nicolas Furukawa',fr:'Nicolas Furukawa',ja:'古川 ニコラ',ar:'نيكولاس فوروكاوا'};
+  const footer=document.querySelector('footer.footer');
+  if(!footer||footer.querySelector('.footer-author'))return;
+  const base=footer.querySelector('.nf-footer-base')||footer;
+  const rights=base.querySelector(':scope > span');
+  const name=names[document.documentElement.lang];
+  if(!rights||!name)return;
+  const identity=document.createElement('span');identity.className='footer-identity';
+  const author=document.createElement('span');author.className='footer-author';author.textContent=name;
+  rights.classList.add('footer-rights');rights.before(identity);identity.append(author,rights);
+})();
