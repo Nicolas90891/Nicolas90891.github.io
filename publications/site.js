@@ -18,6 +18,3 @@
   const author=document.createElement('span');author.className='footer-author';author.textContent=name;
   rights.classList.add('footer-rights');rights.before(identity);identity.append(author,rights);
 })();
-
-// Share the verified author identity and portrait across publication pages.
-(()=>{const person={"@context":"https://schema.org","@type":"Person","@id":"https://nicolasfurukawa.com/#nicolas-furukawa","name":"Nicolas Furukawa","alternateName":["古川ニコラ","古川 ニコラ","نيكولاس فوروكاوا"],"url":"https://nicolasfurukawa.com/","image":"https://nicolasfurukawa.com/nicolas-furukawa-silver.png","sameAs":["https://www.facebook.com/profile.php?id=61596505743564","https://www.linkedin.com/in/nicolas-furukawa-115208442/","https://www.youtube.com/@Nick19891"]};for(const el of document.querySelectorAll('script[type="application/ld+json"]')){try{const data=JSON.parse(el.textContent);if(data.author&&data.author["@id"]===person["@id"]){data.author.image=person.image;data.author.sameAs=person.sameAs;el.textContent=JSON.stringify(data);}}catch(e){}}const el=document.createElement("script");el.type="application/ld+json";el.textContent=JSON.stringify(person);document.head.append(el);})();
